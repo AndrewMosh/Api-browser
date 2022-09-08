@@ -1,0 +1,47 @@
+<!--Сверстайте кнопку, клик на которую будет
+ выводить данные о размерах экрана с помощью alert.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation button</title>
+    <style>
+      body {
+        background-color: rgba(222, 213, 213, 0.236);
+      }
+      div {
+        margin: 300px auto auto auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        width: 200px;
+        height: 100px;
+        border-radius: 50px;
+        border: none;
+        background-color: rgba(244, 5, 5, 0.63);
+        color: white;
+        font-size: 18px;
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+          10px 10px 15px rgba(50, 50, 50, 0.12);
+      }
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      button:active {
+        background-color: rgba(0, 63, 188, 0.23);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button class="butt">Размер Экрана</button>
+    </div>
+    <script src="задание 2.js"></script>
+  </body>
+</html>
