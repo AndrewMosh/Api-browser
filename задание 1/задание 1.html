@@ -1,0 +1,77 @@
+<!--Сверстайте кнопку, которая будет содержать в себе
+ icon_01 (как в примере в последнем видео). При клике
+  на кнопку иконка должна меняться на icon_02. Повторный
+   клик меняет иконку обратно. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG button</title>
+    <style>
+      body {
+        margin: 120px auto auto auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        background-color: rgba(223, 240, 235, 0.335);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 90px rgba(255, 217, 0, 0.569);
+      }
+
+      svg:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      svg:active {
+        color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Нажми на кнопку</h1>
+      <svg
+        id="svg"
+        class="toggleButtons"
+        role="button"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        fill="currentColor"
+        class="bi bi-arrow-down-left-circle"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-5.904-2.854a.5.5 0 1 1 .707.708L6.707 9.95h2.768a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.475a.5.5 0 1 1 1 0v2.768l4.096-4.097z"
+        />
+      </svg>
+      <svg
+        role="button"
+        id="svg-pressed"
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        fill="currentColor"
+        class="bi bi-arrow-down-left-circle-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-5.904-2.803a.5.5 0 1 1 .707.707L6.707 10h2.768a.5.5 0 0 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.525a.5.5 0 0 1 1 0v2.768l4.096-4.096z"
+        />
+      </svg>
+    </div>
+    <script src="задание 1.js"></script>
+  </body>
+</html>
