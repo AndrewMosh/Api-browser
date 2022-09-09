@@ -10,35 +10,34 @@ let websocket;
 
 function writeToScreen(message) {
   let pre = document.createElement("p");
+  pre.classList.add("speaker");
   pre.innerHTML = message;
   output.appendChild(pre);
 }
-btnOpen.addEventListener("click", () => {
+window.onload = () => {
   websocket = new WebSocket(wsUri);
   websocket.onopen = function (event) {
     console.log("Соединение установлено");
   };
   websocket.onclose = function (event) {
-    writeToScreen("Соединение отсутствует. Попробуйте еще раз");
+    console.log("Соединение отсутствует. Попробуйте еще раз");
   };
   websocket.onmessage = function (event) {
-    writeToScreen(
-      `<p style='text-align:left;margin:0;background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);;width:50%;border-radius:15px;color:white;padding:10px 10px 10px 20px'> ${event.data}</p>`
-    );
+    writeToScreen(event.data);
   };
   websocket.onerror = function (event) {
     writeToScreen(event.data);
   };
-});
-
-btnClose.addEventListener("click", () => {
-  websocket.close();
-  websocket = null;
+};
+inputValue.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    btnSend.click();
+  }
 });
 btnSend.addEventListener("click", () => {
   const message = inputValue.value;
-  writeToScreen(
-    `<p style='text-align:right;margin:0;background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);;width:50%;border-radius:15px;color:white;padding:10px 20px 10px 10px;align-self:flex-end'> ${message}</p> `
-  );
+  writeToScreen(message);
   websocket.send(message);
+  inputValue.value = "";
 });
