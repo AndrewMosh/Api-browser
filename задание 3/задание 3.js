@@ -19,11 +19,11 @@ btnOpen.addEventListener("click", () => {
     console.log("Соединение установлено");
   };
   websocket.onclose = function (event) {
-    writeToScreen("Соединение отсутствует");
+    writeToScreen("Соединение отсутствует. Попробуйте еще раз");
   };
   websocket.onmessage = function (event) {
     writeToScreen(
-      `<p style='text-align:left; margin:0;font-size:12px;'>Сервер:</p><br><p style='text-align:left;margin:0'> ${event.data}</p> `
+      `<p style='text-align:left;margin:0;background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);;width:50%;border-radius:15px;color:white;padding:10px 10px 10px 20px'> ${event.data}</p>`
     );
   };
   websocket.onerror = function (event) {
@@ -38,7 +38,7 @@ btnClose.addEventListener("click", () => {
 btnSend.addEventListener("click", () => {
   const message = inputValue.value;
   writeToScreen(
-    `<p style='text-align:right; margin:0; font-size:12px'>Вы:</p><br><p style='text-align:right;margin:0'> ${message}</p> `
+    `<p style='text-align:right;margin:0;background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);;width:50%;border-radius:15px;color:white;padding:10px 20px 10px 10px;align-self:flex-end'> ${message}</p> `
   );
   websocket.send(message);
 });

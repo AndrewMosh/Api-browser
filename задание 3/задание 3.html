@@ -6,22 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Эхо чат</title>
     <style>
+      body {
+        background: rgba(245, 222, 179, 0.189);
+      }
+      .container {
+        position: fixed;
+      }
       .output {
         display: flex;
         flex-direction: column;
         width: 600px;
+        background: linear-gradient(90deg, #faf0cd, #fab397);
+        padding: 20px;
+        width: 600px;
+        height: 600px;
+        border-radius: 30px;
+        overflow: scroll;
+
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="inputSend">
-        <input class="input-value" type="text" /><button class="b-send">
-          Отправить</button
-        ><button>Гео-локация</button
-        ><button class="b-open">Поговори с сервером</button>
+    <div class="output">
+      <div class="container">
+        <div class="inputSend">
+          <input class="input-value" type="text" /><button class="b-send">
+            Отправить</button
+          ><button>Гео-локация</button
+          ><button class="b-open">Поговори с сервером</button>
+        </div>
       </div>
-      <div class="output"></div>
       <button class="b-close">Закрыть соединение</button>
     </div>
     <script src="задание 3.js"></script>
